@@ -1,3 +1,10 @@
 spring:
   application:
     name: messagewell-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/msg_well?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 111111
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml

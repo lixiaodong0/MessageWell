@@ -25,7 +25,13 @@ repositories {
 }
 
 dependencies {
+	//spring-web
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	//mybatis
+	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3")
+	//mysql
+	implementation("com.mysql:mysql-connector-j")
+
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	compileOnly("org.projectlombok:lombok")
