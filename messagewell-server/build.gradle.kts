@@ -31,6 +31,8 @@ dependencies {
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3")
 	//mysql
 	implementation("com.mysql:mysql-connector-j")
+	//数据校验
+	implementation("org.hibernate.validator:hibernate-validator")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")

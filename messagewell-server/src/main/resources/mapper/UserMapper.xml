@@ -4,16 +4,19 @@
 
 <mapper namespace="com.lixd.messagewell.mapper.UserMapper">
 
+    <select id="findUser">
+        select id
+        from t_user
+        where id = #{id}</select>
+
     <select id="findAccount">
         select account
         from t_user
-        where account = #{account}
-    </select>
+        where account = #{account}</select>
 
     <select id="findAll">
         select *
-        from t_user
-    </select>
+        from t_user</select>
 
     <insert id="register">
         insert into t_user(account, password)
