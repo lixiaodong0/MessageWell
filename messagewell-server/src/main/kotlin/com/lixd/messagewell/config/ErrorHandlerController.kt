@@ -1,8 +1,7 @@
 package com.lixd.messagewell.config
 
-import com.lixd.messagewell.model.BaseResult
+import com.lixd.messagewell.bean.BaseResult
 import jakarta.validation.ConstraintViolationException
-import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseBody

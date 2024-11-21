@@ -1,7 +1,6 @@
-package com.lixd.messagewell.model
+package com.lixd.messagewell.bean.`in`
 
 import jakarta.validation.constraints.NotEmpty
-import org.springframework.web.bind.annotation.RequestParam
 
 data class MsgWellParams(
     @NotEmpty(message = "内容不能为空")

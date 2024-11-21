@@ -3,7 +3,7 @@ package com.lixd.messagewell
 import com.lixd.messagewell.mapper.MoodMapper
 import com.lixd.messagewell.mapper.MsgWellMapper
 import com.lixd.messagewell.mapper.UserMapper
-import com.lixd.messagewell.model.MsgWellParams
+import com.lixd.messagewell.bean.`in`.MsgWellParams
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import kotlin.test.Test

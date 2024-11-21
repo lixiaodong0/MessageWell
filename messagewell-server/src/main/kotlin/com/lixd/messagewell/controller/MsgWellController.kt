@@ -1,8 +1,8 @@
 package com.lixd.messagewell.controller
 
-import com.lixd.messagewell.model.BaseResult
+import com.lixd.messagewell.bean.BaseResult
 import com.lixd.messagewell.model.MsgWell
-import com.lixd.messagewell.model.MsgWellParams
+import com.lixd.messagewell.bean.`in`.MsgWellParams
 import com.lixd.messagewell.service.MsgWellService
 import com.lixd.messagewell.service.UserService
 import org.springframework.beans.factory.annotation.Autowired

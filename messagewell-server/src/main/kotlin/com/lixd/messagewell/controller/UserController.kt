@@ -1,16 +1,14 @@
 package com.lixd.messagewell.controller
 
-import com.lixd.messagewell.model.BaseResult
+import com.lixd.messagewell.bean.BaseResult
 import com.lixd.messagewell.model.User
 import com.lixd.messagewell.service.UserService
 import jakarta.validation.constraints.NotEmpty
 import jakarta.validation.constraints.Size
-import org.apache.ibatis.annotations.Param
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 /**

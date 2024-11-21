@@ -1,6 +1,6 @@
 package com.lixd.messagewell.controller
 
-import com.lixd.messagewell.model.BaseResult
+import com.lixd.messagewell.bean.BaseResult
 import com.lixd.messagewell.model.Mood
 import com.lixd.messagewell.service.MoodService
 import org.springframework.beans.factory.annotation.Autowired

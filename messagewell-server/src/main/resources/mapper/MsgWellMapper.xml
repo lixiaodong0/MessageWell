@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lixd.messagewell.mapper.MsgWellMapper">
-    <insert id="insertMsgWell" parameterType="com.lixd.messagewell.model.MsgWellParams">
+    <insert id="insertMsgWell" parameterType="com.lixd.messagewell.bean.in.MsgWellParams">
         insert into t_msg_well(content, user_id, mood_id)
         values (#{content}, #{userId}, #{moodId})
     </insert>

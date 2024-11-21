@@ -2,7 +2,7 @@ package com.lixd.messagewell.service.impl
 
 import com.lixd.messagewell.mapper.MsgWellMapper
 import com.lixd.messagewell.model.MsgWell
-import com.lixd.messagewell.model.MsgWellParams
+import com.lixd.messagewell.bean.`in`.MsgWellParams
 import com.lixd.messagewell.service.MsgWellService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service

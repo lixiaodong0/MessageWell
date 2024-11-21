@@ -1,4 +1,4 @@
-package com.lixd.messagewell.model
+package com.lixd.messagewell.bean
 
 data class BaseResult<T>(
     val code: Int,
