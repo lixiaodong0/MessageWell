@@ -7,15 +7,18 @@ import PublishMsgWellSvg from "@/components/icons/PublishMsgWellSvg.vue";
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <div class="flex flex-row">
-      <a href="/register">注册</a>
-      <a href="/login">登录</a>
+  <div>
+    <div class="flex flex-col">
+      <div class="flex flex-row">
+        <a href="/register">注册</a>
+        <a href="/login">登录</a>
+      </div>
+      <MessageWellList/>
+      <PushMsgWellContainer/>
     </div>
-    <MessageWellList/>
-    <PushMsgWellContainer/>
-    <PublishMsgWellSvg/>
+    <PublishMsgWellSvg class="fixed right-20 bottom-20"/>
   </div>
+
 </template>
 
 <style scoped>
