@@ -1,6 +1,8 @@
 package com.lixd.messagewell.controller
 
 import com.lixd.messagewell.bean.BaseResult
+import com.lixd.messagewell.bean.`in`.LoginParams
+import com.lixd.messagewell.bean.`in`.RegisterParams
 import com.lixd.messagewell.model.User
 import com.lixd.messagewell.service.UserService
 import jakarta.validation.constraints.NotEmpty
@@ -8,7 +10,9 @@ import jakarta.validation.constraints.Size
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 /**
@@ -26,12 +30,10 @@ class UserController {
      */
     @PostMapping("/register")
     fun register(
-        @NotEmpty(message = "请输入账户") account: String,
-        @NotEmpty(message = "请输入密码")
-        @Size(min = 4, max = 20, message = "密码格式不正确，4~10位")
-        password: String
+        @RequestBody
+        registerParams: RegisterParams
     ): BaseResult<String?> {
-        val success = userService.register(account, password)
+        val success = userService.register(registerParams.account, registerParams.password)
         if (success) {
             return BaseResult.success(null)
         }
@@ -42,13 +44,8 @@ class UserController {
      * 登录接口
      */
     @PostMapping("/login")
-    fun login(
-        @NotEmpty(message = "账号不能为空")
-        account: String,
-        @NotEmpty(message = "账户密码不能为空")
-        password: String
-    ): BaseResult<User> {
-        val user = userService.login(account, password)
+    fun login(@RequestBody loginParams: LoginParams): BaseResult<User> {
+        val user = userService.login(loginParams.account, loginParams.password)
         if (user != null) {
             return BaseResult.success(user)
         }

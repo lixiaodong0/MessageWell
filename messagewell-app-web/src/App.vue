@@ -1,9 +1,10 @@
 <script setup>
-import HomeScreen from "@/components/HomeScreen.vue";
 </script>
 
 <template>
-    <HomeScreen/>
+  <main>
+    <RouterView/>
+  </main>
 </template>
 
 <style scoped>
