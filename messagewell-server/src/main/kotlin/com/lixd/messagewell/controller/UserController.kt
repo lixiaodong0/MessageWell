@@ -3,8 +3,11 @@ package com.lixd.messagewell.controller
 import com.lixd.messagewell.bean.BaseResult
 import com.lixd.messagewell.bean.`in`.LoginParams
 import com.lixd.messagewell.bean.`in`.RegisterParams
+import com.lixd.messagewell.model.Token
 import com.lixd.messagewell.model.User
+import com.lixd.messagewell.service.TokenService
 import com.lixd.messagewell.service.UserService
+import com.lixd.messagewell.util.TokenHelper
 import jakarta.validation.constraints.NotEmpty
 import jakarta.validation.constraints.Size
 import org.springframework.beans.factory.annotation.Autowired
@@ -20,10 +23,12 @@ import org.springframework.web.bind.annotation.RestController
  */
 @RequestMapping("/user")
 @RestController
-@Validated
 class UserController {
     @Autowired
     lateinit var userService: UserService
+
+    @Autowired
+    lateinit var tokenService: TokenService
 
     /**
      * 注册接口
@@ -44,9 +49,12 @@ class UserController {
      * 登录接口
      */
     @PostMapping("/login")
-    fun login(@RequestBody loginParams: LoginParams): BaseResult<User> {
-        val user = userService.login(loginParams.account, loginParams.password)
+    fun login(@Validated loginParams: LoginParams): BaseResult<User> {
+        val user = userService.login(loginParams.account ?: "", loginParams.password ?: "")
         if (user != null) {
+            val token = TokenHelper.generate(user.id)
+            tokenService.saveToken(Token(user.id, token))
+            user.token = token
             return BaseResult.success(user)
         }
         return BaseResult.failure(-1, "账号或密码错误")

@@ -1,5 +1,6 @@
 package com.lixd.messagewell.config
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.CorsRegistry
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry
@@ -10,6 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
  */
 @Configuration
 class CorsConfig : WebMvcConfigurer {
+    @Autowired
+    lateinit var tokenAuthInterceptor: TokenAuthInterceptor
 
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.run {
@@ -23,6 +26,6 @@ class CorsConfig : WebMvcConfigurer {
     }
 
     override fun addInterceptors(registry: InterceptorRegistry) {
-        registry.addInterceptor(TokenAuthInterceptor()).addPathPatterns("/well/add")
+        registry.addInterceptor(tokenAuthInterceptor).addPathPatterns("/well/add")
     }
 }
